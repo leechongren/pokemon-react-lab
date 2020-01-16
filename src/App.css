@@ -1,2 +1,14 @@
-.App {
+.App{
+    text-align: center;
+}
+
+.type{
+    display: inline-block;
+    padding: 5px;
+    margin-top:20px;
+    margin-left: 20px;
+    margin-right:15px;
+    border-style: solid;
+    border-radius: 10px;
+
 }
