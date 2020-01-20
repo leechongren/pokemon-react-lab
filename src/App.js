@@ -1,15 +1,12 @@
 import React from "react";
-import "./App.css";
-import pokemonData from "./pokemon/pokemon";
-import {PokemonCard} from "./pokemoncard"
-
-const bulbasaur = pokemonData[0];
-
+import "./components/pokemoncard.css";
+import PokemonGallery from "./components/PokemonGallery";
+import "./components/PokemonGallery.css";
 
 function App() {
   return (
     <div className="App">
-      <PokemonCard pokemon={bulbasaur} />
+      <PokemonGallery />
     </div>
   );
 }
