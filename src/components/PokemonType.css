@@ -1,0 +1,37 @@
+.grass{
+    background-color: green;
+    color: white;
+}
+.fire{
+    background-color: orange;
+}
+.water{
+    background-color: skyblue;
+}
+
+
+.bug{
+    background-color: chartreuse;
+}
+
+.poison{
+    background-color: purple;
+    color: white;
+}
+
+.fairy{
+    background-color: pink;
+}
+
+.electric{
+    background-color: yellow;
+}
+
+.ground{
+    background-color:brown;
+    color:white
+}
+
+.default{
+    background-color: gainsboro;
+}
