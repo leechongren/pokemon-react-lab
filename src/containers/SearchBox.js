@@ -17,12 +17,17 @@ class SearchBox extends React.Component{
         
     })
 
+    filterPokemon = pokemonArr => {
+        return pokemonArr.filter(pokemon=>{
+            return pokemon.name.english.toLowerCase().includes(this.state.value.toLowerCase())
+        })
+    }
+
+
     render(){
         return <div>
             <input type = "text" value = {this.state.value} onChange={this.handleChange}/>
-            <div className = "pokemon-gallery">{PokemonData.filter(pokemon=>{
-                return pokemon.name.english.toLowerCase().includes(this.state.value.toLowerCase())
-            }).map(p=>{
+            <div className = "pokemon-gallery">{this.filterPokemon(PokemonData).map(p=>{
                 return <PokemonCard pokemon = {p} />
             })}
             </div>
