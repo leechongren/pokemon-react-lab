@@ -1,12 +1,17 @@
 import React from "react";
 import "./components/pokemoncard.css";
-import PokemonGallery from "./components/PokemonGallery";
+// import PokemonGallery from "./components/PokemonGallery";
 import "./components/PokemonGallery.css";
+import SearchBox from "./containers/SearchBox";
+
+
+
 
 function App() {
   return (
+    
     <div className="App">
-      <PokemonGallery />
+      <SearchBox/>
     </div>
   );
 }
