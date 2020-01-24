@@ -142,6 +142,19 @@ const POKEMONDETAILS = {
       "curve": 1.6,
       "levels": [2, 7],
       "probability": 15
+   }, "11": {
+      "name": "Metapod",
+      "attack": 30,
+      "defense": 35,
+      "evolveLevel": 7,
+      "evolveTo": "11",
+      "type": "bug",
+      "moves": [
+         "harden"
+      ],
+      "curve": 1.6,
+      "levels": [2, 7],
+      "probability": 15
    },
    "12": {
       "name": "Butterfree",
