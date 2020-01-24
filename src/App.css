@@ -1,1 +1,25 @@
+header{
+    background: black;
+    display:flex;
+    color: white;
+    
+}
 
+header div:last-child{
+    margin-left:auto;
+}
+
+body{
+    margin: 0
+}
+
+a.active{
+    font-weight: bold;
+    color: yellow;
+    
+    
+}
+
+a{
+    color: greenyellow;
+}

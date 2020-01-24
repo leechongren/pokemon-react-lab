@@ -1,6 +1,7 @@
 import React from 'react'
-import pokemonData from "../pokemon/pokemon"
+import axios from 'axios'
 import { PokemonCard } from "./pokemoncard"
+import ReactLoader from "./Loader";
 
 class PokemonGallery extends React.Component {
 
@@ -8,9 +9,33 @@ class PokemonGallery extends React.Component {
         super(props)
         this.state = {
             inputVal: "",
+            pokemonData: [],
+            errorMessage: "",
+            isLoading: false,
         }
 
     }
+
+    componentDidMount() {
+        this.setState({
+            isLoading: true,
+        });
+
+        axios("https://us-central1-pokedex-23fb6.cloudfunctions.net/app/pokemonData").then(result => {
+            this.setState({
+                pokemonData: result.data,
+                isLoading: false
+            })
+        }).catch(error => {
+            console.error(error);
+            this.setState({
+                errorMessage: "Please Try Again",
+                isLoading: false
+            })
+
+        })
+    }
+
 
     handleChange = event => {
         this.setState({
@@ -26,11 +51,16 @@ class PokemonGallery extends React.Component {
 
     render() {
         return <div>
+            {!!this.state.isLoading && <ReactLoader />}
+            <div>
+                Search:
             <input type="text" value={this.state.inputVal} onChange={this.handleChange} />
-            <div className="pokemon-gallery">
-                {this.filterPokemon(pokemonData).map(p => {
-                    return <PokemonCard pokemon={p} />
-                })}
+                <div className="pokemon-gallery">
+                    {!!this.state.errorMessage && <div>{this.state.errorMessage} </div>}
+                    {this.filterPokemon(this.state.pokemonData).map(p => {
+                        return <PokemonCard pokemon={p} />
+                    })}
+                </div>
             </div>
         </div>
     }
